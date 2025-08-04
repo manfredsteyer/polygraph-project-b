@@ -25,8 +25,14 @@ jobs:
       # Uncomment this line to enable task distribution
       # - run: npx nx start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
 
-      - name: Ensure nx is installed
-        run: npm install --no-save nx
+      - name: npm version
+        run: npm --version
+
+      - name: node version
+        run: node --version
+
+      - name: Downgrade to stable npm
+        run: npm install -g npm@8
 
       # Cache node_modules
       - uses: actions/setup-node@v4
