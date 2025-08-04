@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcome } from './nx-welcome';
+import { add } from '@project-a/calc'; 
 
 @Component({
   imports: [NxWelcome, RouterModule],
@@ -10,4 +11,8 @@ import { NxWelcome } from './nx-welcome';
 })
 export class App {
   protected title = 'project-b';
+
+  constructor() {
+    console.log('highly sophisticated logic', add(9, 4));
+  }
 }
