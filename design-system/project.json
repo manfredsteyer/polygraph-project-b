@@ -1,0 +1,29 @@
+{
+  "name": "design-system",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "design-system/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "design-system/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "design-system/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "design-system/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
